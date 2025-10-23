@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-image: url(Images/Grass.jpg);
+}
+
+header {
+    background-color: brown;
+    border-bottom: tan;
+    height: 60px;
+}
+
+h1 {
+    color: tan;
+    margin-right: auto;
+    display:inline-block;
+    vertical-align: middle;
+    justify-content: flex-start;
+    margin: 0 4px;
+}
+
+h2 {
+    border-bottom: 3px solid black;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+
+nav {
+    display: inline-block;
+    vertical-align: middle;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav a {
+    color: tan;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+main.container {
+    margin: 30px auto;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    padding: 20px;
+    background-color: white;
+}
+
+section img {
+    float:left;
+    margin: 0 20px 20px 0
+    width: 30%;
+}
+
+aside {
+    display: inline-block;
+    flex-direction: column;
+    order: 2;
+    width: 200px;
+    padding: 20px;
+    background: white;
+}
+
+aside a {
+    text-decoration: none;
+}
+
+main.container::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+footer {
+    background-color: brown;
+    border-top: 3px solid tan;
+    padding: 30px 0;
+    text-align: center;
+    color: tan;
+    font-size: 24px;
+    font-weight: bold;
+}
