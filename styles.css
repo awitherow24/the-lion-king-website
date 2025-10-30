@@ -17,7 +17,7 @@ header {
 h1 {
     color: tan;
     margin-right: auto;
-    display:inline-block;
+    display: inline-block;
     vertical-align: middle;
     justify-content: flex-start;
     margin: 0 4px;
@@ -69,8 +69,8 @@ section {
 }
 
 section img {
-    float:left;
-    margin: 0 20px 20px 0
+    float: left;
+    margin: 0 20px 20px 0;
     width: 30%;
 }
 
