@@ -9,6 +9,9 @@ body {
 }
 
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background-color: brown;
     border-bottom: tan;
     height: 60px;
@@ -20,7 +23,7 @@ h1 {
     display:inline-block;
     vertical-align: middle;
     justify-content: flex-start;
-    margin: 0 4px;
+    margin: 10px 4px;
 }
 
 h2 {
@@ -38,6 +41,7 @@ nav {
     vertical-align: middle;
     justify-content: flex-end;
     align-items: center;
+    margin: 20px;
 }
 
 nav a {
@@ -96,9 +100,114 @@ main.container::after {
 footer {
     background-color: brown;
     border-top: 3px solid tan;
-    padding: 30px 0;
+    padding: 10px 0;
     text-align: center;
     color: tan;
     font-size: 24px;
     font-weight: bold;
 }
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  justify-items: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 220px;
+  overflow: hidden;
+  cursor: pointer; 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, background-color 0.3s ease;
+  padding: 10px;
+  border: 2px solid transparent; 
+}
+
+@keyframes popBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); 
+  }
+  70% {
+    transform: scale(0.95); 
+  }
+  100% {
+    transform: scale(1.05); 
+  }
+}
+
+.card:hover img {
+  animation: popBounce 0.75s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  border: 2px solid tan;
+  background-color: #ffead9;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 160px;
+  object-fit: contain;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease; 
+}
+
+.card-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card h2 {
+  color: brown;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.4em;
+  color: black;
+  margin-top: 0.5rem;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+@media (max-width: 500px) {
+  header {
+    height: auto;
+    text-align: center;
+  }
+}
+
+ nav {
+  flex-direction: column;
+  align-items: center;
+}
+
