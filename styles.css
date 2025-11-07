@@ -278,15 +278,16 @@ nav {
     background-color: transparent;
     justify-items: center;
     max-width: 1100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card {
+.flipcard {
     width: 360px;
     height: 420px;
     perspective: 1000px;
 }
 
-.card section {
+.flipcard section {
     padding: 0%;
 }
 
@@ -299,7 +300,7 @@ nav {
     animation: flipBack 0.8s ease-in-out;
 }
 
-.card:hover .card-inner {
+.flipcard:hover .card-inner {
     animation: flip 0.8s ease-in-out forwards;
 }
 
@@ -399,4 +400,10 @@ nav {
     to {
         transform: rotateY(0deg);
     }
+}
+
+nav a:hover {
+    color: green;
+    background-color: tan;
+    text-decoration: none;
 }
