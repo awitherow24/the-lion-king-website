@@ -32,8 +32,11 @@ h2 {
 }
 
 p {
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Increased margin for space between the new boxes */
     line-height: 1.5em;
+    border: 1px solid #ccc; /* Added border */
+    padding: 10px; /* Added padding between text and border */
+    background-color: #FFE5BD; /* Added a light background color for contrast */
 }
 
 nav {
@@ -83,8 +86,11 @@ aside {
     flex-direction: column;
     order: 2;
     width: 200px;
-    padding: 20px;
+    padding: 20px; 
+    padding-bottom: 20px;
+    padding-top: 20px;
     background: white;
+    text-align: center;
 }
 
 aside a {
@@ -102,10 +108,75 @@ footer {
     border-top: 3px solid tan;
     padding: 10px 0;
     text-align: center;
-    color: tan;
+    color: brown;
     font-size: 24px;
     font-weight: bold;
 }
+
+nav a:hover {
+    color: green;
+    background-color: tan;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stacks the header items vertically */
+        align-items: center; /* Centers items in the header */
+        max-width: 100%; /* Allows container to use full width */
+        padding: 0 10px; /* Adds some padding to the sides */
+    }
+
+    header .container {
+        height: auto; /* Allow header to adjust height based on content */
+        padding: 10px;
+    }
+
+    h1 {
+        margin: 10px 0; /* Adjust margin for stacking */
+    }
+
+    nav {
+        margin: 10px 0; /* Adjust margin for stacking */
+        display: flex;
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: center;
+        width: 100%;
+    }
+
+    nav a {
+        margin: 5px 0; /* Add spacing between vertical links */
+    }
+
+    main.container {
+        flex-direction: column; /* Stacks the section and aside vertically */
+        margin: 15px auto;
+    }
+
+    section, aside {
+        width: 100%; /* Makes the section and aside take full width */
+        padding: 15px; /* Adjust padding */
+        box-sizing: border-box; /* Ensures padding is included in the width */
+    }
+    
+    section img {
+        width: 50%; /* Make image a bit larger on small screens */
+        float: none; /* Remove float for better centering/flow on mobile */
+        margin: 0 auto 15px auto; /* Center the image */
+        display: block;
+    }
+
+    .character-grid {
+        grid-template-columns: 1fr; /* Display one card per row on mobile */
+    }
+    
+    .card {
+        width: 90%; /* Adjust card width for mobile view */
+        margin: 0 auto;
+    }
+}
+
+/* Erika Section */
 
 .character-grid {
     display: grid;
@@ -304,8 +375,6 @@ nav {
     animation: flip 0.8s ease-in-out forwards;
 }
 
-
-
 .card-front {
 
     width: 100%;
@@ -381,6 +450,12 @@ nav {
     padding-top: 30px;
 }
 
+.card-front,
+.card-back {
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
 
 @keyframes flip {
     from {
@@ -402,8 +477,25 @@ nav {
     }
 }
 
-nav a:hover {
-    color: green;
-    background-color: tan;
-    text-decoration: none;
+/* --- Responsive Design Media Query --- */
+@media screen and (max-width: 768px) {
+    .cast-section {
+        padding: 20px; /* Smaller padding on smaller screens */
+        margin-bottom: 30px;
+    }
+
+    .cast-section p {
+        font-size: 1rem; /* Smaller font size for readability */
+    }
+
+    .cast-cards {
+        /* On screens up to 768px wide, stack cards in a single column */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .flipcard {
+        width: 100%; /* Make flipcards take full width of container */
+        max-width: 360px; /* Keep max width to maintain aspect ratio */
+    }
 }
