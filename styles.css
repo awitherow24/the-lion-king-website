@@ -2,10 +2,14 @@
     margin: 0;
     padding: 0;
     border: 0;
+    box-sizing: border-box; /* Added for consistent box modeling in media queries */
 }
 
 body {
     background-image: url(Images/Grass.jpg);
+    font-size: 16px; /* Added base font size for rem units */
+    line-height: 1.6; /* Added default line height for better readability */
+    color:#000; /* Added a default text color with good contrast */
 }
 
 header {
@@ -13,22 +17,21 @@ header {
     top: 0;
     z-index: 1000;
     background-color: brown;
-    border-bottom: tan;
+    border-bottom: 3px solid tan; /* Corrected CSS property */
     height: 60px;
 }
 
 h1 {
     color: tan;
-    margin-right: auto;
     display: inline-block;
     vertical-align: middle;
-    justify-content: flex-start;
     margin: 10px 4px;
 }
 
 h2 {
     border-bottom: 3px solid black;
     margin-bottom: 15px;
+    color:#000; /* Ensures good contrast */
 }
 
 p {
@@ -36,23 +39,32 @@ p {
     line-height: 1.5em;
     border: 1px solid #ccc; /* Added border */
     padding: 10px; /* Added padding between text and border */
-    background-color: #fcf0de; /* Added a light background color for contrast */
+    background-color: #fcf0de; 
+    color: #000 /* Ensures good contrast */
 }
 
 nav {
     display: inline-block;
     vertical-align: middle;
-    justify-content: flex-end;
     align-items: center;
     margin: 20px;
 }
 
 nav a {
     color: tan;
-    font-size: 20px;
+    font-size: 1.25rem; /* Used rem for better user scalability */
     text-decoration: none;
     font-weight: bold;
     margin-left: 20px;
+    /* Added focus styles for keyboard navigation */
+    outline: none;
+}
+
+nav a:focus {
+    outline: 3px solid green;
+    background-color: tan;
+    color: green;
+    text-decoration: underline;
 }
 
 .container {
@@ -73,6 +85,17 @@ section {
     width: 600px;
     padding: 20px;
     background-color: white;
+    color:#000;
+}
+
+section a {
+    color: black; /* provides strong contrast on a white background */
+    text-decoration: underline; /* Added underline to distinguish links clearly from text */
+}
+
+section a:hover, section a:focus {
+    color: #006400; /* Dark green on hover/focus */
+    text-decoration: none;
 }
 
 section img {
@@ -86,21 +109,21 @@ aside {
     flex-direction: column;
     order: 2;
     width: 200px;
-    padding: 20px; 
     padding-bottom: 20px;
     padding-top: 20px;
     background: white;
     text-align: center;
+    color:#000; /* Ensures good contrast */
 }
 
 aside a {
     text-decoration: none;
+    color: brown; /* Ensures good contrast against white backdrop */
 }
 
-main.container::after {
-    content: "";
-    clear: both;
-    display: block;
+aside a:focus {
+    outline: 2px solid brown;
+    text-decoration: underline;
 }
 
 footer {
@@ -108,8 +131,8 @@ footer {
     border-top: 3px solid tan;
     padding: 10px 0;
     text-align: center;
-    color: brown;
-    font-size: 24px;
+    color: tan; /* Changed color from 'brown' to 'tan' for contrast on 'brown' background */
+    font-size: 1.5rem; /* Used rem for better readability */
     font-weight: bold;
 }
 
@@ -156,7 +179,6 @@ nav a:hover {
     section, aside {
         width: 100%; /* Makes the section and aside take full width */
         padding: 15px; /* Adjust padding */
-        box-sizing: border-box; /* Ensures padding is included in the width */
     }
     
     section img {
